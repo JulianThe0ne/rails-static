@@ -1,5 +1,10 @@
 <h1>Here is the dinosaur page 🦖🦕</h1>
 <form action="/dinosaur" method="get">
-  <input type="text" name="dinosaur" placeholder="What dinosaur are you looking for?">
+  <input type="text" name="dino" value="<%= params[:dino] %>" placeholder="Enter dinosaur">
   <input type="submit">
 </form>
+<ol>
+  <% @dinos.each do |dino| %>
+    <li><%= dino.capitalize %></li>
+  <% end %>
+</ol>
