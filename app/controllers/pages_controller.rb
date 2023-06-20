@@ -11,10 +11,10 @@ class PagesController < ApplicationController
   end
 
   def animal
-    @members = ["thanh", "dimitri", "germain", "damien", "julien"]
+    @animals = ['tiger', 'elephant', 'lion', 'hippopotamus', 'bear', 'horse']
 
-    if params[:member]
-      @members = @members.select { |member| member.start_with?(params[:member]) }
+    if params[:animal]
+      @animals = @animals.select { |animal| animal.start_with?(params[:animal]) }
     end
   end
 end

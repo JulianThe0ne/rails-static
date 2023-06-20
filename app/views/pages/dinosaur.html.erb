@@ -3,8 +3,8 @@
   <input type="text" name="dino" value="<%= params[:dino] %>" placeholder="Enter dinosaur">
   <input type="submit">
 </form>
-<ol>
+<ul>
   <% @dinos.each do |dino| %>
     <li><%= dino.capitalize %></li>
   <% end %>
-</ol>
+</ul>
