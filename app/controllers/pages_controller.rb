@@ -5,8 +5,12 @@ class PagesController < ApplicationController
   def dinosaur
     @dinos = ['tyrannosaurus', 'stegosaurus', 'spinosaurus', 'triceratops', 'allosaurus', 'velociraptor', 'brachiosaurus', 'ankylosaurus' ]
 
-    if params[:dino]
-      @dinos = @dinos.select { |dino| dino.start_with?(params[:dino]) }
+    search = params[:dino]
+
+    if search
+      @dinos = @dinos.select do |dino|
+        dino.start_with? search.downcase
+      end
     end
   end
 
